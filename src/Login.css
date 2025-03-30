@@ -1,0 +1,120 @@
+.login-container {
+    display: flex;
+    font-family: sans-serif;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+  }
+  
+  .login-left {
+    flex: 2;
+    position: relative;
+  }
+  
+  .login-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .login-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin: 10px 0 5px;
+    font-weight: 600;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  .password-input {
+    position: relative;
+  }
+  
+  .eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .sign-in-btn {
+    background-color: #663399;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .google-signin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .google-signin img {
+    width: 20px;
+    margin-right: 10px;
+  }
+  
+  .signup-text {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    position: relative;
+  }
+  
+  .divider::before,
+  .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #ccc;
+  }
+  
+  .divider span {
+    margin: 0 10px;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+  }
+  
