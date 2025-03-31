@@ -15,12 +15,15 @@ function Home(){
       const token = params.get('token');
       const name = params.get('name');
       const email = params.get('email');
-      console.log('Token:', token);
-        console.log('Name:', name);
-        console.log('Email:', email);
-  
+        const userData = {
+            email,
+            name,
+            token
+        }
       if (token && name && email) {
-        localStorage.setItem('user',name)
+        localStorage.setItem('user',userData)
+        localStorage.setItem('name', name);
+
         // Optional: เก็บ token ลง localStorage
         localStorage.setItem('token', token);
 
