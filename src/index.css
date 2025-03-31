@@ -1053,3 +1053,60 @@ img.img-fluid {
 .w-full {
   width: 100%;
 }
+
+.card-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* -----------------------------
+  Border
+------------------------------ */
+.border {
+  border: 1px solid #e6e6e6;
+}
+.border-radius {
+  border-radius: 8px;
+}
+.border-primary-200 {
+  border: 1px solid #b490d7;
+}
+.border-primary-200:hover {
+  border: 1px solid #663399;
+}
+.rounded {
+  border-radius: 8px;
+}
+.shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.shadow-lg {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+}
+
+.h-screen-nav {
+  height: calc(100vh - 60px);
+}
+
+.header {
+  position: relative;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 1); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bg-home {
+  background: url('/images/gradient.png') no-repeat top fixed; 
+  background-size: 100% auto;
+  height: calc(100vh + 40px);
+  width: 100vw;
+}

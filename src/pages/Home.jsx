@@ -1,7 +1,13 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaQuestionCircle, FaTicketAlt } from "react-icons/fa";
+import {
+  FaQuestionCircle,
+  FaTicketAlt,
+  FaAddressBook,
+  FaSearch,
+} from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
+import { MdGridView, MdAddBox } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { login } from "../features/auth/authSlice";
 
@@ -30,24 +36,59 @@ function Home() {
     }
   }, [location.search]);
   return (
-    <>
-      <section className="heading">
-        <h1 className="text-primary">Alice Dental Care</h1>
-        <p>Please choose from an option below</p>
-      </section>
-      <Link to="/tickets" className="btn btn-blue-500 btn-block">
-        <FaTicketAlt />
-        View My Appointments
-      </Link>
-      <Link to="/new-ticket" className="btn btn-reverse btn-block">
-        <FaQuestionCircle />
-        Create New Appointment
-      </Link>
-      <Link to="/find-dentist" className="btn btn-block">
-        <FaTicketAlt />
-        Find Dentist
-      </Link>
-    </>
+    <div className="bg-home">
+    <div className="grid align-items-center h-screen-nav">
+      <div>
+        <section className="heading">
+          <h3 className="text-primary mb-1">Alice Dental Care</h3>
+          <p>Please choose from an option below</p>
+        </section>
+        <div className="grid grid-cols-3 gap-3 mx-10">
+          {/* Card 1 */}
+          <div className="card border-primary-200 shadow rounded">
+            <div className="card-body p-5">
+              <h3 className="text-primary mb-1">View My Booking</h3>
+              <p className="card-text">
+                Check and manage your dental bookings.
+              </p>
+              <Link to="/booking" className="btn btn-outline-primary mt-3">
+                <MdGridView className="card-icon mr-2" />
+                View Bookings
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="card border-primary-200 shadow rounded">
+            <div className="card-body p-5">
+              <h3 className="text-primary mb-1">Create New Booking</h3>
+              <p className="card-text">
+                Schedule a new booking with your dentist.
+              </p>
+              <Link to="/new-booking" className="btn btn-outline-primary mt-3">
+                <MdAddBox className="card-icon mr-2" />
+                Create Booking
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="card border-primary-200 shadow rounded">
+            <div className="card-body p-5">
+              <h3 className="text-primary mb-1">Find Dentist</h3>
+              <p className="card-text">
+                Search for dentists near your location.
+              </p>
+              <Link to="/find-dentist" className="btn btn-outline-primary mt-3">
+                <FaAddressBook className="card-icon mr-2" />
+                Find Dentist
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
   );
 }
 export default Home;
