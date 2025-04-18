@@ -4,13 +4,10 @@ const API_URL='http://localhost:5001/api/v1/auth/'
 const register = async (userData) => {
     try{
         const response = await axios.post(API_URL + 'register/', userData)
-        console.log(JSON.stringify(response.data))
-        console.log(response.data.name)
         if(response.data) {
-            //localStorage.setItem('user',JSON.stringify(response.data))
-            localStorage.setItem('user',response.data.name)
+            localStorage.setItem('user',JSON.stringify(response.data))
         }
-        return response.data.name//response.data
+        return response.data
     } catch(error) {
         console.log('authService: register')
         console.log(error);
@@ -19,13 +16,8 @@ const register = async (userData) => {
 //Login user
 const login = async (userData) => {
     const response = await axios.post(API_URL + 'login', userData)
-    console.log(JSON.stringify(response))
     if(response.data) {
-        //localStorage.setItem('user',JSON.stringify(response.data))
-        localStorage.setItem('user',response.data.name)
-        localStorage.setItem('token', response.data.token)
-        localStorage.setItem('email', response.data.email)
-        localStorage.setItem('name', response.data.name)
+        localStorage.setItem('user',JSON.stringify(response.data))
     }
     console.log(response.data);
     return response.data
@@ -33,7 +25,7 @@ const login = async (userData) => {
 
 //Logout user
 const logout = () => {
-    localStorage.setItem('user', null);
+    localStorage.removeItem('user')
 }
 
 const authService ={

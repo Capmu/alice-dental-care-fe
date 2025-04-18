@@ -9,14 +9,14 @@ import { FcGoogle } from "react-icons/fc";
 function Register() {
   const [formData, setFormData] = useState({
     name: "",
-    phone: "",
+    telNumber: "",
     email: "",
     password: "",
     password2: "",
     role: "user",
   });
 
-  const { name, phone, email, password, password2, role } = formData;
+  const { name, telNumber, email, password, password2, role } = formData;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user, isLoading, isError, isSuccess, message } = useSelector(
@@ -39,7 +39,7 @@ function Register() {
     const { name, value } = e.target;
 
     // ตรวจสอบเฉพาะฟิลด์ phone
-    if (name === "phone") {
+    if (name === "telNumber") {
       // อนุญาตเฉพาะตัวเลขและจำกัดความยาวไม่เกิน 10 หลัก
       const isValid = /^[0-9]*$/.test(value) && value.length <= 10;
       if (!isValid) {
@@ -60,7 +60,7 @@ function Register() {
     } else {
       const userData = {
         name,
-        phone,
+        telNumber,
         email,
         password,
         role,
@@ -115,9 +115,9 @@ function Register() {
                   <input
                     type="text"
                     className="form-control"
-                    id="phone"
-                    name="phone"
-                    value={phone}
+                    id="telNumber"
+                    name="telNumber"
+                    value={telNumber}
                     onChange={onChange}
                     placeholder="Enter Your phone"
                     required

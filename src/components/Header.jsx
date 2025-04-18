@@ -7,9 +7,7 @@ function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
-  const name = localStorage.getItem("name");
-  console.log(name);
-
+  const userData = JSON.parse(localStorage.getItem("user"));
   const onLogout = () => {
     dispatch(logout());
     dispatch(reset());
@@ -25,10 +23,10 @@ function Header() {
         </Link>
       </div>
       <ul>
-        {user ? ( // ตรวจสอบว่ามี user และ user.name
+        {user ? (
           <>
             <li>
-              <p className="text-primary">Welcome, {name}!</p>
+              <p className="text-primary">Welcome, {userData.name}!</p>
             </li>
             <li>
               <button className="btn btn-outline-primary" onClick={onLogout}>

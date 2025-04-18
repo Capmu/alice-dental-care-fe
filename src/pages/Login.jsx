@@ -91,14 +91,6 @@ function Login() {
                 />
               </div>
 
-              <div className="form-options mt-4">
-                <label>
-                  <input type="checkbox" className="mr-2" />
-                  Remember me
-                </label>
-                <a href="/">Forgot password?</a>
-              </div>
-
               <button type="submit" className="btn btn-primary mt-4">
                 Sign in
               </button>
